@@ -1,15 +1,3 @@
-# **************************************************************************** #
-#                                                                              #
-#                                                         :::      ::::::::    #
-#    ft_plant_age.py                                    :+:      :+:    :+:    #
-#                                                     +:+ +:+         +:+      #
-#    By: vebastos <vebastos@student.42.fr>          +#+  +:+       +#+         #
-#                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2026/01/19 18:01:59 by vebastos          #+#    #+#              #
-#    Updated: 2026/01/19 18:01:59 by vebastos         ###   ########.fr        #
-#                                                                              #
-# **************************************************************************** #
-
 def ft_plant_age():
 	try:
 		plant_age = int(input("Enter plant age in days: "))
@@ -22,3 +10,6 @@ def ft_plant_age():
 			print("Plant needs more time to grow.") 
 	except ValueError:
 		print("Must be a number!")
+
+if __name__ == "__main__":
+    ft_plant_age()

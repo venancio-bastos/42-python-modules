@@ -1,5 +1,3 @@
-#!/usr/bin/env python3
-
 class Plant:
 	"""
 	Acts as a blueprint for Plant objects.

@@ -1,15 +1,3 @@
-# **************************************************************************** #
-#                                                                              #
-#                                                         :::      ::::::::    #
-#    ft_harvest_total.py                                :+:      :+:    :+:    #
-#                                                     +:+ +:+         +:+      #
-#    By: vebastos <vebastos@student.42.fr>          +#+  +:+       +#+         #
-#                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2026/01/19 17:43:41 by vebastos          #+#    #+#              #
-#    Updated: 2026/01/19 17:43:41 by vebastos         ###   ########.fr        #
-#                                                                              #
-# **************************************************************************** #
-
 def ft_harvest_total():
 	try:
 		i = 1
@@ -25,3 +13,6 @@ def ft_harvest_total():
 		print(f"Total harvest: {total}")
 	except ValueError:
 		print("Error: Must be a number")
+
+if __name__ == "__main__":
+    ft_harvest_total()

@@ -1,15 +1,3 @@
-# **************************************************************************** #
-#                                                                              #
-#                                                         :::      ::::::::    #
-#    ft_water_reminder.py                               :+:      :+:    :+:    #
-#                                                     +:+ +:+         +:+      #
-#    By: vebastos <vebastos@student.42.fr>          +#+  +:+       +#+         #
-#                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2026/01/19 18:11:43 by vebastos          #+#    #+#              #
-#    Updated: 2026/01/19 18:11:43 by vebastos         ###   ########.fr        #
-#                                                                              #
-# **************************************************************************** #
-
 def	ft_water_reminder():
 	try:
 		days = int(input("Days since last watering: "))
@@ -22,3 +10,6 @@ def	ft_water_reminder():
 			print("Plants are fine")
 	except ValueError:
 		print("Must be a number!")
+
+if __name__ == "__main__":
+    ft_water_reminder()

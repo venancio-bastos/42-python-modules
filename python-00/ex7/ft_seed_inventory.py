@@ -1,15 +1,3 @@
-# **************************************************************************** #
-#                                                                              #
-#                                                         :::      ::::::::    #
-#    ft_seed_inventory.py                               :+:      :+:    :+:    #
-#                                                     +:+ +:+         +:+      #
-#    By: vebastos <vebastos@student.42.fr>          +#+  +:+       +#+         #
-#                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2026/01/19 19:30:48 by vebastos          #+#    #+#              #
-#    Updated: 2026/01/19 19:30:48 by vebastos         ###   ########.fr        #
-#                                                                              #
-# **************************************************************************** #
-
 def	ft_seed_inventory(seed_type: str, quantity: int, unit: str) -> None:
 	name = seed_type.capitalize()
 	match unit:
@@ -21,3 +9,6 @@ def	ft_seed_inventory(seed_type: str, quantity: int, unit: str) -> None:
 			print(f"{name} seeds: covers {quantity} square meters")
 		case _:
 			print("Unknown unit type")
+
+if __name__ = "__main__":
+	ft_seed_inventory()

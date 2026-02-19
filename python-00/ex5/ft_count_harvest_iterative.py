@@ -1,15 +1,3 @@
-# **************************************************************************** #
-#                                                                              #
-#                                                         :::      ::::::::    #
-#    ft_count_harvest_iterative.py                      :+:      :+:    :+:    #
-#                                                     +:+ +:+         +:+      #
-#    By: vebastos <vebastos@student.42.fr>          +#+  +:+       +#+         #
-#                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2026/01/19 18:18:56 by vebastos          #+#    #+#              #
-#    Updated: 2026/01/19 18:18:56 by vebastos         ###   ########.fr        #
-#                                                                              #
-# **************************************************************************** #
-
 def	ft_count_harvest_iterative():
 	try:
 		days_left = int(input("Days until harvest: "))
@@ -21,3 +9,6 @@ def	ft_count_harvest_iterative():
 		print("Harvest time!")
 	except ValueError:
 		print("Must be a number")
+
+if __name__ == "__main__":
+    ft_count_harvest_iterative()
