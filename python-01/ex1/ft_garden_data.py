@@ -1,16 +1,15 @@
-#!/usr/bin/env python3
-
 class Plant:
 	"""
-	Acts as a blueprint for Plant objects.
+	Plant object.
 	"""
 	def __init__(self, name: str, height: float, age: int) -> None:
 		"""
-		Constructs a Plant object.
-		"""
+        Plant object constructs.
+        """
 		self.name = name
 		self.height = height
 		self.age = age
+		
 	def __str__(self) -> str:
 		"""
 		Returns a readable string representation of the plant.
@@ -19,7 +18,7 @@ class Plant:
 
 def main() -> None:
 	"""
-    Creates Plant's objects and displays their information.
+    Displays plant's information.
     """
 	garden = [
         Plant("Rose", 25, 30),

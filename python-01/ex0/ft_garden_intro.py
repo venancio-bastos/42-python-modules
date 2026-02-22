@@ -1,10 +1,10 @@
 class Plant:
 	"""
-	Acts as a blueprint for Plant objects.
+	Plant object.
 	"""
 	def __init__(self, name: str, height: float, age: int) -> None:
 		"""
-        Constructs a Plant object.
+        Plant object constructs.
         """
 		self.name = name
 		self.height = height
@@ -12,7 +12,7 @@ class Plant:
 
 def main() -> None:
 	"""
-    Displays plant's their information.
+    Displays plant's information.
     """
 	plant = Plant("Rosa", 25, 30)
 	print("=== Welcome to My Garden ===")

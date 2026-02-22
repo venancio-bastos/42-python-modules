@@ -1,6 +1,8 @@
-#!/usr/bin/env python3
-
-def check_temperature(temp_str):
+def check_temperature(temp_str: str) -> int | None:
+	"""
+    Receives a temperature as a string, attempts to convert it to an integer,
+    and validates if it falls within the safe range for plants (0 to 40 degrees).
+    """
 	try:
 		temperature = int(temp_str)
 
@@ -15,7 +17,11 @@ def check_temperature(temp_str):
 		print(f"Error: '{temp_str}' is not a valid number\n")
 		return None
 	
-def	main():
+def	test_temperature_input() -> None:
+	"""
+    Demonstrates the validation pipeline by testing good input, bad input,
+    and extreme values, showing that the program does not crash.
+    """
 	test_cases = ["25", "abc", "100", "-50"]
 	
 	print("=== Garden Temperature Checker ===\n")
@@ -27,4 +33,4 @@ def	main():
 	print("All tests completed - program didn't crash!\n")
 
 if __name__ == "__main__":
-	main()
+	test_temperature_input()

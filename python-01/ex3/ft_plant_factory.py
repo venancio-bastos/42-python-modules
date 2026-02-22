@@ -1,12 +1,10 @@
-#!/usr/bin/env python3
-
 class Plant:
 	"""
-	Acts as a blueprint for Plant objects.
+	Plant objects.
 	"""
 	def __init__(self, name: str, height: float, age: int) -> None:
 		"""
-        Constructs a Plant object.
+        Plant object constructs.
         """
 		self.name = name
 		self.height = height
@@ -20,7 +18,7 @@ class Plant:
 
 def plant_factory() -> list[Plant]:
 	"""
-    Creates multiple plants returns them as a list.
+    Creates multiple plants returns a list.
     """
 	plants = [
 		("Rose", 25, 30),

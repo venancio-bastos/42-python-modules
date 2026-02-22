@@ -1,26 +1,27 @@
-#!/usr/bin/env python3
-
 class Plant:
 	"""
-	Acts as a blueprint for Plant objects.
+	Plant objects.
 	"""
 	def __init__(self, name: str, height: float, days_old: int) -> None:
 		"""
-        Constructs a Plant object.
+        Plant object constructs.
         """
 		self.name = name
 		self.height = height
 		self.days_old = days_old
+
 	def grow(self) -> None:
 		"""
-        Increases the plant's height by 1 unit.
+        Increases the plant height by 1 unit.
         """
 		self.height +=1
+
 	def age(self) -> None:
 		"""
-		Increases the plant's lifetime by 1 day.
+		Increases the plant lifetime by 1 day.
 		"""
 		self.days_old += 1
+
 	def get_info(self) -> str:
 		"""
 		Returns a readable string representation of the plant.

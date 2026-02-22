@@ -1,54 +1,53 @@
-#!/usr/bin/env python3
-
 class Plant:
 	"""
-	Acts as a blueprint for Plant objects.
+	Plant objects.
 	"""
 	def __init__(self, name: str, height: float, age: int) -> None:
 		"""
-        Constructs a Plant object.
+        Plant object constructs.
         """
 		self.name = name
 		self.height = height
 		self.age = age
+
 	def __str__(self) -> str:
 		"""
-		Displays the base information (name, type, height, age).
+		Displays the base information about the plant.
 		"""
 		class_name = self.__class__.__name__
 		return f"{self.name} ({class_name}): {self.height}cm, {self.age} days, "	
 
 class Flower(Plant):
 	"""
-	Acts as a blueprint for Flower objects.
+	Flower objects.
 	"""
 	def __init__(self, name: str, height: float, age: int, color: str) -> None:
 		"""
-        Constructs a Flower object.
+        Flower object constructs.
         """
 		super().__init__(name, height, age)
 		self.color = color
 	
 	def bloom(self) -> str:
 		"""
-		Display a message 
+		Display a message.
 		"""
 		return f"{self.name} is blooming beautifully!"
 
 	def __str__(self) -> str:
 		"""
-		Concat with default message
+		Concat with default message.
 		"""
 		default_message = super().__str__()
 		return default_message + f"{self.color} color"
 
 class Tree(Plant):
 	"""
-	Acts as a blueprint for Tree objects.
+	Tree objects.
 	"""
 	def __init__(self, name: str, height: float, age: int, trunk_diameter: float) -> None:
 		"""
-        Constructs a Tree object.
+        Tree object constructs.
         """
 		super().__init__(name, height, age)
 		self.trunk_diameter = trunk_diameter
@@ -62,18 +61,18 @@ class Tree(Plant):
 
 	def __str__(self) -> str:
 		"""
-		Concat with default message
+		Concat with default message.
 		"""
 		default_message = super().__str__()
 		return default_message + f"{self.trunk_diameter}cm diameter"
 
 class Vegetable(Plant):
 	"""
-	Acts as a blueprint for Vegetable objects.
+	Vegetable objects.
 	"""
 	def __init__(self, name: str, height: float, age: int, harvest_season: str, nutritional_value:str) -> None:
 		"""
-        Constructs a Vegetable object.
+        Vegetable object constructs.
         """
 		super().__init__(name, height, age)
 		self.harvest_season = harvest_season
@@ -87,14 +86,14 @@ class Vegetable(Plant):
 
 	def __str__(self) -> str:
 		"""
-		Concat with default message
+		Concat with default message.
 		"""
 		default_message = super().__str__()
 		return default_message + f"{self.harvest_season} harvest"
 
 def main() -> None:
 	"""
-    Creates and displays instances of different plant types.
+    Create and displays different plant types.
     """
 	flowers_data = [
 		("Rose", 25, 30, "red"),
