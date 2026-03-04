@@ -115,19 +115,16 @@ def main() -> None:
 		plant = Flower(name, height, age, color)
 		print(plant)
 		print(plant.bloom())
-		print()
 
 	for name, height, age, trunk in trees_data:
 		plant = Tree(name, height, age, trunk)
 		print(plant)
 		print(plant.produce_shade())
-		print()
 
 	for name, height, age, season, nut_val in vegetables_data:
 		plant = Vegetable(name, height, age, season, nut_val)
 		print(plant)
 		print(plant.show_benefits())
-		print()
 
 if __name__ == "__main__":
 	main()

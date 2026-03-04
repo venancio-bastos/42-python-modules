@@ -9,12 +9,6 @@ class Plant:
 		self.name = name
 		self.height = height
 		self.age = age
-	
-	def __str__(self) -> str:
-		"""
-		Returns a readable string representation of the plant.
-		"""
-		return f"{self.name}: {self.height}cm, {self.age} days old"
 
 def plant_factory() -> list[Plant]:
 	"""
@@ -24,13 +18,13 @@ def plant_factory() -> list[Plant]:
 		("Rose", 25, 30),
 		("Oak", 200, 365),
 		("Cactus", 5, 90),
-		("Sunflower", 80, 450),
+		("Sunflower", 80, 45),
 		("Fern", 15, 120)
 	]
 	total_plants = []
 	for name, height, age in plants:
 		new_plant = Plant(name, height, age)
-		print(f"Created: {new_plant}")
+		print(f"Created: {new_plant.name} ({new_plant.height}cm, {new_plant.age} days)")
 		total_plants.append(new_plant)
 	return total_plants
 	

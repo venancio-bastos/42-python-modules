@@ -19,7 +19,7 @@ def garden_operations(error_to_trigger: str) -> None:
 def test_error_types() -> None:
     """
     Calls the garden operations, catches each specific error, 
-    explains what went wrong, and keeps the program running [cite: 156-159].
+    explains what went wrong, and keeps the program running.
     """
     print("=== Garden Error Types Demo ===")
     

@@ -28,19 +28,19 @@ def test_custom_errors() -> None:
     Demonstrates raising and catching custom garden exceptions,
     including catching all errors using the base class GardenError [cite: 199-202].
     """
-    print("=== Custom Garden Errors Demo ===\n")
+    print("=== Custom Garden Errors Demo ===")
     
     try:
         print("Testing PlantError...")
         simulate_plant_problem()
     except PlantError as e:
-        print(f"Caught PlantError: {e}\n")
+        print(f"Caught PlantError: {e}")
         
     try:
         print("Testing WaterError...")
         simulate_water_problem()
     except WaterError as e:
-        print(f"Caught WaterError: {e}\n")
+        print(f"Caught WaterError: {e}")
         
     print("Testing catching all garden errors...")
     try:

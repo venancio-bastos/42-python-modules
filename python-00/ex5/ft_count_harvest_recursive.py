@@ -1,9 +1,6 @@
 def ft_count_harvest_recursive(i = 1, days_left = None):
 	if days_left is None:
 		days_left = int(input("Days until harvest: "))
-		if days_left < 0:
-			print("Must be a positive number!")
-			return
 	print(f"Day {i}")
 	if i < days_left:
 		i += 1

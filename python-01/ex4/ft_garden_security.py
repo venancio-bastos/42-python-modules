@@ -16,13 +16,13 @@ class SecurePlant:
 			"""
 			if height < 0:
 				return (
-					f"\nInvalid operation attempted: height {height}cm [REJECTED]\n"
-					+ "Security: Negative height rejected"
+					f"Invalid operation attempted: height {height}cm [REJECTED]\n"
+					"Security: Negative height rejected"
 				)
 			self._height = height
 			return f"Height updated: {height}cm [OK]"
 	
-	def get_height(self) -> int:
+	def get_height(self) -> float:
 		"""
 		Returns plant's height.
 		"""
@@ -34,8 +34,8 @@ class SecurePlant:
 		"""
 		if age < 0:
 			return (
-				f"\nInvalid operation attempted: age {age} days [REJECTED]\n"
-				+ "Security: Negative age rejected"
+				f"Invalid operation attempted: age {age} days [REJECTED]\n"
+				"Security: Negative age rejected"
 			) 
 		self._age = age
 		return f"Age updated: {age} days [OK]"
