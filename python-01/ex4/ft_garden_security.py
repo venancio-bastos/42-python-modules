@@ -7,8 +7,8 @@ class SecurePlant:
     def set_height(self, height: float) -> str:
         if height < 0:
             return (
-                f"\nInvalid operation attempted: height {height}cm [REJECTED]\n"
-                "Security: Negative height rejected"
+                f"\nInvalid operation attempted: height {height}cm [REJECTED]"
+                "\nSecurity: Negative height rejected"
             )
         self._height = height
         return f"Height updated: {height}cm [OK]"
