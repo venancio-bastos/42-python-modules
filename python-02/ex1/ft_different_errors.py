@@ -1,8 +1,4 @@
 def garden_operations(error_to_trigger: str) -> None:
-    """
-    Executes specific garden operations that are designed to fail,
-    demonstrating different built-in Python exceptions.
-    """
     if error_to_trigger == "value":
         int("abc")
     elif error_to_trigger == "zero":
@@ -17,18 +13,14 @@ def garden_operations(error_to_trigger: str) -> None:
 
 
 def test_error_types() -> None:
-    """
-    Calls the garden operations, catches each specific error, 
-    explains what went wrong, and keeps the program running.
-    """
     print("=== Garden Error Types Demo ===")
-    
+
     try:
         print("Testing ValueError...")
         garden_operations("value")
     except ValueError as e:
         print(f"Caught ValueError: {e}")
-    
+
     try:
         print("Testing ZeroDivisionError...")
         garden_operations("zero")
@@ -52,7 +44,7 @@ def test_error_types() -> None:
         garden_operations("multiple")
     except (ValueError, ZeroDivisionError):
         print("Caught an error, but program continues!")
-        
+
     print("All error types tested successfully!")
 
 
