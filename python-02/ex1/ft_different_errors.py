@@ -1,14 +1,10 @@
 def garden_operations(error_to_trigger: str) -> None:
-    """
-    Executes specific garden operations that are designed to fail,
-    demonstrating different built-in Python exceptions.
-    """
     if error_to_trigger == "value":
         int("abc")
     elif error_to_trigger == "zero":
         print(10 / 0)
     elif error_to_trigger == "file":
-        open("test.txt", "r")
+        open("missing.txt", "r")
     elif error_to_trigger == "key":
         test = {"plant": "Rose"}
         print(test["missing_plant"])
@@ -17,43 +13,39 @@ def garden_operations(error_to_trigger: str) -> None:
 
 
 def test_error_types() -> None:
-    """
-    Calls the garden operations, catches each specific error, 
-    explains what went wrong, and keeps the program running.
-    """
     print("=== Garden Error Types Demo ===")
-    
+
     try:
-        print("Testing ValueError...")
+        print("\nTesting ValueError...")
         garden_operations("value")
     except ValueError as e:
-        print(f"Caught ValueError: {e}")
-    
+        print("Caught ValueError: invalid literal for int()")
+
     try:
-        print("Testing ZeroDivisionError...")
+        print("\nTesting ZeroDivisionError...")
         garden_operations("zero")
     except ZeroDivisionError as e:
         print(f"Caught ZeroDivisionError: {e}")
 
     try:
-        print("Testing FileNotFoundError...")
+        print("\nTesting FileNotFoundError...")
         garden_operations("file")
     except FileNotFoundError as e:
-        print(f"Caught FileNotFoundError: {e}")
+        print("Caught FileNotFoundError: No such file 'missing.txt'")
 
     try:
-        print("Testing KeyError...")
+        print("\nTesting KeyError...")
         garden_operations("key")
     except KeyError as e:
-        print(f"Caught KeyError: {e}")
+        print(f"Caught KeyError: 'missing\\_plant'")
 
     try:
-        print("Testing multiple errors together...")
+        print("\nTesting multiple errors together...")
         garden_operations("multiple")
     except (ValueError, ZeroDivisionError):
         print("Caught an error, but program continues!")
-        
-    print("All error types tested successfully!")
+
+    print("\nAll error types tested successfully!")
 
 
 if __name__ == "__main__":

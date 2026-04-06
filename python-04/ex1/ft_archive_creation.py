@@ -1,8 +1,4 @@
 def main() -> None:
-    """
-    Creates a new storage unit and writes critical preservation data into it.
-    Demonstrates file creation using 'w' mode, writing data, and safe closure [cite: 178, 181-182].
-    """
     filename = "../new_discovery.txt"
 
     print("=== CYBER ARCHIVES PRESERVATION SYSTEM ===")
@@ -12,7 +8,7 @@ def main() -> None:
     vault = open(filename, 'w')
 
     print("Inscribing preservation data...")
-    
+
     entry1 = "[ENTRY 001] New quantum algorithm discovered"
     entry2 = "[ENTRY 002] Efficiency increased by 347%"
     entry3 = "[ENTRY 003] Archived by Data Archivist trainee"
