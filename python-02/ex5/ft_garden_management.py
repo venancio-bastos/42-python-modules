@@ -41,6 +41,7 @@ class GardenManager:
             ) -> None:
         if water_level > 10:
             raise WaterError(
+<<<<<<< HEAD
                     f"Water level {water_level} is too high (max 10)"
                 )
         if sunlight_hours < 2:
@@ -51,6 +52,20 @@ class GardenManager:
                 f"{plant_name}: healthy (water: {water_level}, "
                 f"sun: {sunlight_hours})"
             )
+=======
+                f"Water level {water_level} "
+                "is too high (max 10)"
+            )
+        if sunlight_hours < 2:
+            raise PlantError(
+                f"Sunlight hours {sunlight_hours} "
+                "is too low (min 2)"
+            )
+        print(
+            f"{plant_name}: healthy "
+            f"(water: {water_level}, sun: {sunlight_hours})"
+        )
+>>>>>>> f4b57bf491b4fb443877ba3362980ca5fb0706e5
 
     def emergency_simulation(self) -> None:
         raise GardenError("Not enough water in tank")

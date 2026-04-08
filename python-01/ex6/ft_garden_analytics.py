@@ -16,10 +16,16 @@ class GardenManager:
     def create_garden_network(cls, quantity: int) -> list:
         names = ["Alice", "Bob"]
         network = []
+
         for i in range(quantity):
-            name = names[i] if i < len(names) else f"Garden {i+1}"
+            if i < len(names):
+                name = names[i]
+            else:
+                name = f"Garden {i+1}"
+
             new_garden = cls(name)
             network.append(new_garden)
+
         return network
 
     def add_plant(self, plant: 'Plant') -> None:

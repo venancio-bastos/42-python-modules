@@ -30,7 +30,12 @@ def test_plant_checks() -> None:
             check_plant_health(name, water, sun)
         except ValueError as e:
             print(f"Error: {e}")
+<<<<<<< HEAD
     print("\nAll error raising tests completed!")
+=======
+
+    print("All error raising tests completed!")
+>>>>>>> f4b57bf491b4fb443877ba3362980ca5fb0706e5
 
 
 if __name__ == "__main__":

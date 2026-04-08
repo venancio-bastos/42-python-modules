@@ -19,7 +19,11 @@ def test_error_types() -> None:
         print("\nTesting ValueError...")
         garden_operations("value")
     except ValueError as e:
+<<<<<<< HEAD
         print("Caught ValueError: invalid literal for int()")
+=======
+        print(f"Caught ValueError: {e}")
+>>>>>>> f4b57bf491b4fb443877ba3362980ca5fb0706e5
 
     try:
         print("\nTesting ZeroDivisionError...")
@@ -45,7 +49,11 @@ def test_error_types() -> None:
     except (ValueError, ZeroDivisionError):
         print("Caught an error, but program continues!")
 
+<<<<<<< HEAD
     print("\nAll error types tested successfully!")
+=======
+    print("All error types tested successfully!")
+>>>>>>> f4b57bf491b4fb443877ba3362980ca5fb0706e5
 
 
 if __name__ == "__main__":

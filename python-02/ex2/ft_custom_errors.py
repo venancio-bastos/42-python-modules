@@ -33,7 +33,11 @@ def test_custom_errors() -> None:
     except WaterError as e:
         print(f"Caught WaterError: {e}")
 
+<<<<<<< HEAD
     print("\nTesting catching all garden errors...")
+=======
+    print("Testing catching all garden errors...")
+>>>>>>> f4b57bf491b4fb443877ba3362980ca5fb0706e5
     try:
         simulate_plant_problem()
     except GardenError as e:
