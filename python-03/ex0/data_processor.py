@@ -114,7 +114,7 @@ def main() -> None:
     print("Extracting 3 values...")
     for _ in range(3):
         rank, val = num_proc.output()
-        print(f"Numeric value {rank}:\n{val}")
+        print(f"Numeric value {rank}: {val}")
 
     print("\nTesting Text Processor...")
     text_proc = TextProcessor()

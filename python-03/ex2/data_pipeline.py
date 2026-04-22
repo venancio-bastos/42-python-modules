@@ -1,7 +1,42 @@
 import typing
 import json
-from data_stream import DataStream
-from data_processor import NumericProcessor, TextProcessor, LogProcessor
+
+
+class DataStream:
+    def __init__(self) -> None:
+        self.processors: list[DataProcessor] = []
+
+    def register_processor(self, proc: DataProcessor) -> None:
+        self.processors.append(proc)
+
+    def process_stream(self, stream: list[typing.Any]) -> None:
+        for item in stream:
+            processed = False
+            for proc in self.processors:
+                if proc.validate(item):
+                    proc.ingest(item)
+                    processed = True
+                    break
+            
+            if not processed:
+                print(
+                    f"DataStream error Can't process element in stream: {item}"
+                )
+
+    def print_processors_stats(self) -> None:
+        print("== DataStream statistics ==")
+        if not self.processors:
+            print("No processor found, no data")
+            return
+            
+        for proc in self.processors:
+            name = proc.__class__.__name__.replace("Processor", " Processor")
+            remaining = len(proc._storage)
+            total_processed = proc._processing_rank + remaining
+            print(
+                f"{name}: total {total_processed} items processed, "
+                f"remaining {remaining} on processor"
+            )
 
 
 class ExportPlugin(typing.Protocol):
