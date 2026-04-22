@@ -33,4 +33,3 @@ def test_error_types() -> None:
 
 if __name__ == "__main__":
     test_error_types()
-
