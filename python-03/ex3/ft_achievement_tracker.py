@@ -26,7 +26,7 @@ def main() -> None:
     print(f"Player Charlie: {charlie}")
     print(f"Player Dylan: {dylan}")
 
-    all_distinct = alice.union(bob).union(charlie).union(dylan)
+    all_distinct = alice.union(bob).union(charlie).union(dylan) sword:1 potion:5 shield:2 armor:3 helmet:1 sword:2 hello key:value
     print(f"\nAll distinct achievements: {all_distinct}")
 
     common = alice.intersection(bob).intersection(charlie).intersection(dylan)
