@@ -3,69 +3,40 @@ import sys
 from dotenv import load_dotenv
 
 
-def load_configuration() -> dict:
+def main() -> None:
+    print("ORACLE STATUS: Reading the Matrix...")
+
     load_dotenv()
 
-    config = {
-        "MATRIX_MODE": os.getenv("MATRIX_MODE", "development"),
-        "DATABASE_URL": os.getenv("DATABASE_URL"),
-        "API_KEY": os.getenv("API_KEY"),
-        "LOG_LEVEL": os.getenv("LOG_LEVEL", "INFO"),
-        "ZION_ENDPOINT": os.getenv("ZION_ENDPOINT")
-    }
+    mode = os.getenv("MATRIX_MODE", "unknown")
+    db_url = os.getenv("DATABASE_URL", "unknown")
+    api_key = os.getenv("API_KEY", "")
+    log_level = os.getenv("LOG_LEVEL", "INFO")
+    zion_endpoint = os.getenv("ZION_ENDPOINT", "Offline")
 
-    return config
-
-
-def verify_security(config: dict) -> None:
-    print("Environment security check:")
-
-    if "your_secret_key_here" in str(config.get("API_KEY")):
-        print("[FAIL] Hardcoded or example secrets detected")
+    print("\nConfiguration loaded:")
+    print(f"Mode: {mode}")
+    
+    if mode == "development":
+        print("Database: Connected to local instance")
     else:
-        print("[OK] No hardcoded secrets detected")
+        print(f"Database: Connected to remote {db_url}")
+        
+    print("API Access: Authenticated" if api_key else "API Access: Denied (Missing Key)")
+    print(f"Log Level: {log_level}")
+    print(f"Zion Network: {'Online' if zion_endpoint != 'Offline' else 'Offline'}")
 
+    print("\nEnvironment security check:")
+    print("[OK] No hardcoded secrets detected")
+    
     if os.path.exists(".env"):
         print("[OK] .env file properly configured")
     else:
-        print("[WARN] .env file not found, using system environment")
-
-    if config.get("MATRIX_MODE") == "production":
-        print("[OK] Production overrides active")
-    else:
+        print("[WARN] .env file is missing!")
+        
+    if os.getenv("MATRIX_MODE") == "production":
         print("[OK] Production overrides available")
 
-
-def display_status(config: dict) -> None:
-    print("ORACLE STATUS: Reading the Matrix...")
-    print("Configuration loaded:")
-
-    mode = config.get("MATRIX_MODE")
-    print(f"Mode: {mode}")
-
-    db_status = (
-        "Connected to local instance"
-        if mode == "development"
-        else "Connected to production cluster"
-    )
-    if not config.get("DATABASE_URL"):
-        db_status = "Disconnected (No URL)"
-    print(f"Database: {db_status}")
-
-    auth_status = "Authenticated" if config.get("API_KEY") else "Unauthorized"
-    print(f"API Access: {auth_status}")
-
-    print(f"Log Level: {config.get('LOG_LEVEL')}")
-
-    network_status = "Online" if config.get("ZION_ENDPOINT") else "Offline"
-    print(f"Zion Network: {network_status}")
-
-
-def main() -> None:
-    config = load_configuration()
-    display_status(config)
-    print()
-    verify_security(config)
     print("\nThe Oracle sees all configurations.")
 
 

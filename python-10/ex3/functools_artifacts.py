@@ -4,6 +4,9 @@ from typing import List, Callable, Dict, Any
 
 
 def spell_reducer(spells: List[int], operation: str) -> int:
+    if not spells:
+        return 0
+
     operations = {
         "add": operator.add,
         "multiply": operator.mul,
