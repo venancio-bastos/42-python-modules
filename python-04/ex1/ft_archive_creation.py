@@ -36,7 +36,6 @@ def main() -> None:
     new_content = '\n'.join(transformed_lines)
     if new_content:
         new_content += '\n'
-        
     print(new_content, end="")
 
     print("Enter new file name (or empty): ", end="")
