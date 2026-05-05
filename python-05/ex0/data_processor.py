@@ -6,7 +6,7 @@ class DataProcessor(abc.ABC):
     def __init__(self) -> None:
         self._storage: list[str] = []
         self._processing_rank: int = 0
- 
+
     @abc.abstractmethod
     def validate(self, data: typing.Any) -> bool:
         pass

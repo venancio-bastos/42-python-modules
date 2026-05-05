@@ -133,10 +133,12 @@ class DataStream:
                     processed = True
                     break
             if not processed:
-                print(f"DataStream error Can't process element in stream: {item}")
+                print(
+                    "DataStream error - "
+                    f"Can't process element in stream: {item}")
 
     def print_processors_stats(self) -> None:
-        print("== DataStream statistics ==")
+        print("\n== DataStream statistics ==")
         if not self.processors:
             print("No processor found, no data")
             return
@@ -145,7 +147,10 @@ class DataStream:
             name = proc.__class__.__name__.replace("Processor", " Processor")
             remaining = len(proc._storage)
             total_processed = proc._processing_rank + remaining
-            print(f"{name}: total {total_processed} items processed, remaining {remaining} on processor")
+            print(
+                f"{name}: total {total_processed} items processed, "
+                "remaining {remaining} on processor"
+            )
 
     def output_pipeline(self, nb: int, plugin: ExportPlugin) -> None:
         for proc in self.processors:
@@ -163,7 +168,7 @@ class DataStream:
 
 def main() -> None:
     print("=== Code Nexus Data Pipeline ===")
-    print("Initialize Data Stream")
+    print("\nInitialize Data Stream...")
     ds = DataStream()
     ds.print_processors_stats()
 
@@ -173,36 +178,38 @@ def main() -> None:
     ds.register_processor(LogProcessor())
 
     batch1 = [
-        'Hello world', 
-        [3.14, 1, 2.71], 
-        [{'log_level': 'WARNING', 'log_message': 'Telnet access! Use ssh instead'}, 
-         {'log_level': 'INFO', 'log_message': 'User wil is connected'}], 
-        42, 
+        'Hello world',
+        [3.14, 1, 2.71],
+        [{'log_level': 'WARNING',
+          'log_message': 'Telnet access! Use ssh instead'},
+         {'log_level': 'INFO', 'log_message': 'User wil is connected'}],
+        42,
         ['Hi', 'five']
     ]
-    print(f"Send first batch of data on stream: {batch1}")
+    print(f"\nSend first batch of data on stream: {batch1}")
     ds.process_stream(batch1)
     ds.print_processors_stats()
 
-    print("Send 3 processed data from each processor to a CSV plugin:")
+    print("\nSend 3 processed data from each processor to a CSV plugin:")
     csv_plugin = CSVExportPlugin()
     ds.output_pipeline(3, csv_plugin)
     ds.print_processors_stats()
 
     batch2 = [
-        21, 
-        ['I love AI', 'LLMs are wonderful', 'Stay healthy'], 
-        [{'log_level': 'ERROR', 'log_message': '500 server crash'},  
-         {'log_level': 'NOTICE', 'log_message': 'Certificate expires in 10 days'}], 
-        [32, 42, 64, 84, 128, 168], 
+        21,
+        ['I love AI', 'LLMs are wonderful', 'Stay healthy'],
+        [{'log_level': 'ERROR', 'log_message': '500 server crash'},
+         {'log_level': 'NOTICE',
+          'log_message': 'Certificate expires in 10 days'}],
+        [32, 42, 64, 84, 128, 168],
         'World hello'
     ]
-    print("Send another batch of data:")
+    print("\nSend another batch of data:")
     print(batch2)
     ds.process_stream(batch2)
     ds.print_processors_stats()
 
-    print("Send 5 processed data from each processor to a JSON plugin:")
+    print("\nSend 5 processed data from each processor to a JSON plugin:")
     json_plugin = JSONExportPlugin()
     ds.output_pipeline(5, json_plugin)
     ds.print_processors_stats()
